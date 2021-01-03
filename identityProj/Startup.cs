@@ -1,5 +1,6 @@
 using identityProj.ConfigStartup;
 using identityProj.Models.Context;
+using identityProj.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -33,6 +34,7 @@ namespace identityProj
             });
 
             services.AddAthenticate();
+            services.AddScoped<IMessageSender, MessageSender>();
             //services.AddIdentity<IdentityUser, IdentityRole>()
             //    .AddEntityFrameworkStores<AppDbContext>()
             //    .AddDefaultTokenProviders();
